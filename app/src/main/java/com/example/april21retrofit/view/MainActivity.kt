@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        viewModel.photoLiveData.observe(this) { photos ->
+        viewModel.photosMutableData.observe(this) { photos ->
             Log.d("PHOTOS DATA", photos.toString())
             adapter = PhotosAdapter(photos)
             binding.recyclerViewMain.adapter = adapter
